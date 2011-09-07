@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project>
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.schmitztech.hadoop</groupId>
+<artifactId>hadoop-scala-commons</artifactId>
+<name>hadoop-scala-commons</name>
+<version>0.0.1</version>
+<properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+<pluginRepositories>
+  <pluginRepository>
+    <id>scala-tools.org</id>
+    <name>Scala-tools Maven2 Repository</name>
+    <url>http://scala-tools.org/repo-releases</url>
+  </pluginRepository>
+</pluginRepositories>
+<dependencies>
+  <dependency>
+    <groupId>org.scala-lang</groupId>
+    <artifactId>scala-library</artifactId>
+    <version>2.9.1</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.hadoop</groupId>
+    <artifactId>hadoop-core</artifactId>
+    <version>0.20.203.0</version>
+  </dependency>
+</dependencies>
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.scala-tools</groupId>
+      <artifactId>maven-scala-plugin</artifactId>
+      <configuration>
+        <sourceDir>src/main/scala</sourceDir>
+        <jvmArgs>
+          <jvmArg>-Xms64m</jvmArg>
+          <jvmArg>-Xmx1024m</jvmArg>
+        </jvmArgs>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+</project>
