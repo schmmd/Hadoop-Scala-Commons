@@ -1,7 +1,7 @@
-package com.schmitztech.hadoop._
+package com.schmitztech.hadoop
 
 import collection.JavaConversions._
-import com.schmitztech.hadoop._
+import com.schmitztech.hadoop.Implicits._
 
 import org.apache.hadoop.mapreduce.lib.input._
 import org.apache.hadoop.mapreduce.lib.output._
@@ -26,7 +26,7 @@ object Reducers {
         values: java.lang.Iterable[IntWritable], 
         context:Reducer[T,IntWritable,T,IntWritable]#Context) {
       val sum = values.reduceRight(_+_)
-      context write (key, new IntWritable(sum))
+      context write (key, sum)
     }
   }
 
@@ -36,7 +36,7 @@ object Reducers {
         values: java.lang.Iterable[LongWritable], 
         context:Reducer[T,LongWritable,T,LongWritable]#Context) {
       val sum = values.reduceRight(_+_)
-      context write (key, new LongWritable(sum))
+      context write (key, sum)
     }
   }
 }
