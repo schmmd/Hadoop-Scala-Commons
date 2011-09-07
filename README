@@ -1,0 +1,9 @@
+A collection of some definitions to make writing Hadoop jobs in Scala more
+enjoyable.  The implicit definitions were inspired by Jonhnny Wessley's
+SHadoop project at http://code.google.com/p/jweslley/.  There were some 
+unnecessary implicits, however, which have been removed since they applied
+to the deprecated mapred Hadoop API or were subsumed by 
+collection.JavaConversions.
+
+There are also some common Reducers which show how the Hadoop conversions are
+useful.
